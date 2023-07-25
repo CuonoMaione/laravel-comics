@@ -14,5 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    $navLink = config('db.navLink');
+    $dcComics = config('db.dcComics');
+    return view('welcome' , compact('navLink', 'dcComics') );
 });
